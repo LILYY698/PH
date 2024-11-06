@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long t1 = 0, t2 = 1, siguienteTermino;
+
+    printf("Introduce el número de términos: ");
+    scanf("%d", &n);
+
+    // Validación para números negativos o cero
+    if (n <= 0) {
+        printf("Por favor, introduce un número entero positivo.\n");
+        return 1;
+    }
+
+    printf("Secuencia de Fibonacci:\n");
+
+    for (i = 1; i <= n; ++i) {
+        printf("%lld", t1);
+
+        // Solo agregar una coma si no es el último término
+        if (i < n) {
+            printf(", ");
+        }
+
+        siguienteTermino = t1 + t2;
+        t1 = t2;
+        t2 = siguienteTermino;
+    }
+
+    printf("\n");
+    return 0;
+}
