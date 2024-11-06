@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int min, max;
+    
+    printf("Ingrese la cantidad de números: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("La cantidad de números debe ser mayor a 0.\n");
+        return 1;
+    }
+
+    int num;
+    printf("Ingrese el número 1: ");
+    scanf("%d", &num);
+
+    // Inicializamos min y max con el primer valor ingresado
+    min = max = num;
+
+    for (i = 2; i <= n; i++) {
+        printf("Ingrese el número %d: ", i);
+        scanf("%d", &num);
+
+        if (num < min) {
+            min = num;
+        }
+        if (num > max) {
+            max = num;
+        }
+    }
+
+    printf("El valor mínimo es: %d\n", min);
+    printf("El valor máximo es: %d\n", max);
+
+    return 0;
+}
